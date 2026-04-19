@@ -1,83 +1,105 @@
-# GPT-Cleaner
+# ✨ CleanDocs AI
 
-Turn messy AI-generated text into clean, structured **Markdown** — READMEs, notes, and API-style docs — with a Flask + OpenRouter backend and a small vanilla JS frontend.
+Turn messy AI-generated code and notes into **production-ready Markdown documentation**.
 
-**Routes:** `/` = landing page · `/app` = editor
+---
 
-> **Tip for your repo:** add a screenshot of the “See the difference” demo (`docs/screenshot.png`) and link it here after your first run.
+## 🚀 Features
 
-## Features
+* 🧠 Smart structuring (headings, sections, flow)
+* 💻 Code formatting with proper blocks
+* 🧹 AI cleanup (remove noise, fix clarity)
+* 📄 Templates:
 
-- Templates: **README**, **Notes**, **API Docs** · optional **Fix code errors** in fenced blocks  
-- Side-by-side **word diff** (additions / removals) · history with preview, delete, load into editor  
-- Exports: Markdown, GitHub-style README copy, HTML, `.md`, print / PDF  
-- Dark mode by default (toggle on home + app; synced via `localStorage`)  
-- Friendly errors (credits / input size / rate limit)
+  * README
+  * Notes
+  * API Docs
+* 📊 Insights panel (sections, code fixes, detection)
+* 🕘 History (reopen & reuse outputs)
+* 🔍 Compare mode (before vs after)
 
-## Requirements
+---
 
-- Python **3.10+**
-- An [OpenRouter](https://openrouter.ai/) API key (or `OPENAI_API_KEY` for OpenAI’s API directly)
+## 🖥️ Demo
 
-## Quick start
+Paste messy input → Get clean documentation instantly.
+
+---
+
+## ⚙️ Tech Stack
+
+* Frontend: HTML, CSS, JavaScript / React + Tailwind
+* Backend: Python (Flask)
+* AI: OpenAI / OpenRouter API
+
+---
+
+## 📦 Installation
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/Harshitmishra-04/CleanDocs-AI.git
 cd gpt-cleaner
-python -m venv .venv
+```
 
-# Windows (PowerShell)
-.venv\Scripts\Activate.ps1
+### 2. Backend setup
 
-# macOS / Linux
-source .venv/bin/activate
-
+```bash
 pip install -r requirements.txt
-copy .env.example .env   # Windows: copy; Unix: cp — then edit .env
 python app.py
 ```
 
-Open **http://127.0.0.1:5000/** for the marketing page, or **http://127.0.0.1:5000/app** for the editor.
+### 3. Frontend
 
-### Environment
+Open `index.html` or run frontend server if using React.
 
-| Variable | Description |
-|----------|-------------|
-| `OPENROUTER_API_KEY` | Primary key (recommended) |
-| `OPENROUTER_MODEL` | Default: `openai/gpt-4o-mini` |
-| `OPENAI_API_KEY` | Used if OpenRouter key is unset |
-| `MAX_OUTPUT_TOKENS` | Default `4096` — lower if you hit 402 / credit limits |
+---
 
-See `.env.example` for optional OpenRouter headers.
+## 🔑 Environment Variables
 
-## API
+Create a `.env` file:
 
-`POST /clean` with JSON:
-
-```json
-{
-  "text": "your messy content",
-  "mode": "readme",
-  "fix_code": false
-}
+```env
+API_KEY=your_api_key_here
 ```
 
-`mode`: `readme` | `notes` | `api_docs` · `fix_code`: optional boolean.
+---
 
-## Project layout
+## ▶️ Usage
+
+1. Paste messy AI-generated content
+2. Select template (README / Notes / API Docs)
+3. Click **Clean & Format**
+4. Copy or download Markdown
+
+---
+
+## 🧠 Example
+
+### Input
 
 ```
-gpt-cleaner/
-  app.py                 # Flask: routes /, /app, POST /clean
-  requirements.txt
-  .env.example
-  templates/
-    landing.html         # Marketing + demo
-    tool.html            # Editor UI
-  static/
-    css/style.css
-    js/app.js            # App logic
-    js/landing.js        # Landing theme toggle
+messy code with bad formatting...
 ```
+
+### Output
+
+```
+# Clean Documentation
+Proper structure and code blocks...
+```
+
+---
+
+## 📌 Roadmap
+
+* [ ] Diff view (highlight changes)
+* [ ] Code error fixing
+* [ ] Export to PDF
+* [ ] Authentication & cloud history
+
+---
 
 ## License
 
@@ -86,3 +108,7 @@ MIT — see [LICENSE](LICENSE).
 ## Contributing
 
 Issues and PRs welcome. Keep changes focused; match existing code style.
+
+⭐ Show your support
+
+If you like this project, give it a ⭐ on GitHub!
