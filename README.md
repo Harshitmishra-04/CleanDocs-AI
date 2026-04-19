@@ -40,7 +40,7 @@ Paste messy input → Get clean documentation instantly.
 
 ```bash
 git clone https://github.com/Harshitmishra-04/CleanDocs-AI.git
-cd gpt-cleaner
+cd CleanDocs-AI
 ```
 
 ### 2. Backend setup
