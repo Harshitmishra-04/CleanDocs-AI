@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPT-Cleaner — Turn messy AI output into production-ready docs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body class="landing-body dark">
+    <header class="landing-nav">
+      <a href="{{ url_for('home') }}" class="landing-logo">✨ GPT-Cleaner</a>
+      <div class="landing-nav-actions">
+        <button type="button" class="btn btn-ghost" id="btn-landing-theme" title="Toggle light / dark" aria-label="Toggle light and dark mode">
+          <span id="landing-theme-icon">☀️</span>
+        </button>
+        <a href="{{ url_for('tool') }}" class="btn btn-primary btn-nav">Try it now →</a>
+      </div>
+    </header>
+
+    <section class="landing-hero">
+      <h1 class="landing-title">GPT-Cleaner</h1>
+      <p class="landing-tagline">Turn messy AI output into production-ready docs</p>
+      <p class="landing-lead">
+        Paste sloppy ChatGPT dumps, half-formatted code, and rough notes — get tight Markdown you can ship: READMEs, API docs, and structured notes without the filler.
+      </p>
+      <a href="{{ url_for('tool') }}" class="btn btn-primary btn-hero">Try it now →</a>
+    </section>
+
+    <section class="landing-section" aria-labelledby="why-heading">
+      <h2 id="why-heading" class="landing-h2">Why use GPT-Cleaner?</h2>
+      <p class="landing-p">
+        In <strong>5 seconds</strong>: it’s the fastest path from <em>messy AI text</em> to <em>clean, paste-ready Markdown</em> — with templates for READMEs, notes, and API references, side-by-side diff, optional code fixes, and exports (Markdown, HTML, PDF).
+      </p>
+    </section>
+
+    <section class="landing-section landing-demo" aria-labelledby="demo-heading">
+      <h2 id="demo-heading" class="landing-h2">See the difference</h2>
+      <p class="landing-p">Messy input → clean output (example)</p>
+      <div class="landing-demo-grid">
+        <div class="landing-demo-col">
+          <div class="landing-demo-label">Before</div>
+          <pre class="landing-demo-pre" readonly>ok so the api is like POST /users maybe json idk
+def get(u): return User.query.get(u) # fix later
+errors: use try except lol</pre>
+        </div>
+        <div class="landing-demo-arrow" aria-hidden="true">→</div>
+        <div class="landing-demo-col">
+          <div class="landing-demo-label">After</div>
+          <pre class="landing-demo-pre landing-demo-clean" readonly>## User API
+
+`POST /users` — request body: JSON.
+
+```python
+def get(u):
+    return User.query.get(u)
+```
+
+- Use `try` / `except` for errors.</pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="feat-heading">
+      <h2 id="feat-heading" class="landing-h2">Features</h2>
+      <div class="landing-cards landing-cards-3">
+        <div class="feature-card landing-card">
+          <span class="feature-ico">📐</span>
+          <strong>Smart structuring</strong>
+          <span>Headings, lists, and flow that match how devs read.</span>
+        </div>
+        <div class="feature-card landing-card">
+          <span class="feature-ico">💻</span>
+          <strong>Code formatting</strong>
+          <span>Fenced blocks, languages, optional line wrap &amp; per-block copy.</span>
+        </div>
+        <div class="feature-card landing-card">
+          <span class="feature-ico">🧹</span>
+          <strong>AI cleanup</strong>
+          <span>Sharper README-style output — less generic filler.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="use-heading">
+      <h2 id="use-heading" class="landing-h2">Use cases</h2>
+      <ul class="landing-use-list">
+        <li><strong>ChatGPT → GitHub</strong> — Turn long answers into a real README.</li>
+        <li><strong>Lecture chaos → notes</strong> — Bullet lists and headings you can study from.</li>
+        <li><strong>Raw API text → docs</strong> — Endpoints, params, and examples in one pass.</li>
+      </ul>
+    </section>
+
+    <section class="landing-section" aria-labelledby="how-heading">
+      <h2 id="how-heading" class="landing-h2">How it works</h2>
+      <ol class="landing-steps">
+        <li>Paste messy content</li>
+        <li>Choose a template (README, Notes, or API Docs)</li>
+        <li>Get clean Markdown — copy, export, or diff</li>
+      </ol>
+    </section>
+
+    <section class="landing-cta">
+      <h2 class="landing-h2">Ready?</h2>
+      <a href="{{ url_for('tool') }}" class="btn btn-primary btn-cta">🚀 Start cleaning now</a>
+    </section>
+
+    <footer class="landing-footer">
+      <small><a href="{{ url_for('tool') }}">Open app</a> · GPT-Cleaner</small>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+  </body>
+</html>
